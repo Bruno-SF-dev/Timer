@@ -12,7 +12,7 @@
   
   - Aprendendo a organizar melhor os blocos de códigos - o que pode/deve ou não ficar em um bloco, o que poderia ou não estar em uma função
 
-  - Operações básicas como resto da divião ``%``, para calcular o tempo em horas, minutos e segundos
+  - Operações básicas como resto da divisão ``%``, para calcular o tempo em horas, minutos e segundos
 
   - Objeto ``Math`` para arredondar os números, usando o método ``floor()``
 
