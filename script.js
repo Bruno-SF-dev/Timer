@@ -1,38 +1,45 @@
+//------ Selecting html elements ------
+
 const view = document.querySelector('.view') 
+const buttonPlay = document.querySelector('.play')
+const buttonStop = document.querySelector('.stop')
+const buttonReset = document.querySelector('.reset')
+
+//------ Formatting Functions ------
 
 const toHour = time => Math.floor(time / 3600)
 const toMinute = time => Math.floor((time % 3600) / 60)
 const toSecond = time => (time % 3600) % 60
-
 const formated = value => String(value).padStart(2, 0)
 
-function init(time) {
+//------ For Viewing ------
+
+function viewTimer(time) {
   let hours = formated(toHour(time))
   let minutes = formated(toMinute(time))
   let seconds = formated(toSecond(time))
   view.innerHTML = `${hours}:${minutes}:${seconds}`
 }
 
-let time = 0
-init(time)
+//------ Initial State ------
 
-function countdown() {
-  time = time + 1
+let initialTime = 0 // in seconds
+let currentTime = initialTime
+viewTimer(initialTime)
 
-  hours = formated(toHour(time))
-  minutes = formated(toMinute(time))
-  seconds = formated(toSecond(time))
-  view.innerHTML = `${hours}:${minutes}:${seconds}`
+//------ Update Time ------
+
+function timer() {
+  currentTime++
+  viewTimer(currentTime)
 }
+
+//------ Manipulate the Timer ------
 
 let repeat;
 
-const buttonPlay = document.querySelector('.play')
-const buttonStop = document.querySelector('.stop')
-const buttonReset = document.querySelector('.reset')
-
 buttonPlay.addEventListener('click', () => {
-  repeat = setInterval(countdown, 1000)
+  repeat = setInterval(timer, 1000) // start timer
   
   buttonPlay.setAttribute('disabled','')
   buttonStop.removeAttribute('disabled')
@@ -40,21 +47,20 @@ buttonPlay.addEventListener('click', () => {
 })
 
 buttonStop.addEventListener('click', () => {
-  clearInterval(repeat)
+  clearInterval(repeat) // stop timer
   
-  buttonPlay.removeAttribute('disabled','')
-  
+  buttonPlay.removeAttribute('disabled')
   buttonStop.setAttribute('disabled','')
 })
 
 buttonReset.addEventListener('click', () => {
+  clearInterval(repeat) // stop timer
+  
+  viewTimer(currentTime = initialTime) // reset time
+
   buttonPlay.removeAttribute('disabled')
   buttonStop.setAttribute('disabled','')
   buttonReset.setAttribute('disabled','')
-
-  clearInterval(repeat)
-  time = 0 
-  init(time)
 })
 
 
