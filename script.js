@@ -18,7 +18,7 @@ function viewTimer(time) {
   let hours = formated(toHour(time))
   let minutes = formated(toMinute(time))
   let seconds = formated(toSecond(time))
-  view.innerHTML = `${hours}:${minutes}:${seconds}`
+  view.textContent = `${hours}:${minutes}:${seconds}`
 }
 
 //------ Initial State ------
