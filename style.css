@@ -39,8 +39,9 @@ main span {
   font-weight: 600;
   color: #e9e8e8;
   text-shadow: 3px 1px 4px rgba(0, 0, 0, 0.2);
-  text-align: center;
   
+  padding-left: .8rem;
+
   width: 100%;
 }
 
@@ -81,11 +82,11 @@ button:disabled {
 }
 
 .stop {
-  background-color: #E74C3C;
+  background-color:tomato;
 }
 
 .reset {
-  background-color: #F5B041;
+  background-color:slategrey;
 }
 
 /*---- Responsive ----*/
@@ -94,7 +95,10 @@ button:disabled {
   html {
     font-size: 14px;
   }
-
+  
+  main span {
+    padding-left: 2.25rem;
+  }
 }
 
 @media (max-width: 420px) {
@@ -106,5 +110,11 @@ button:disabled {
 @media (max-width: 370px) {
   html {
     font-size: 12px;
+  }
+}
+
+@media (max-width: 370px) {
+  html {
+    font-size: 10px;
   }
 }

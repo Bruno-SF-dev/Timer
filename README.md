@@ -30,3 +30,12 @@
 <br>
 <br>
 <p  style="font-size: 90%;text-align: justify">Certamente, há diversas maneiras mais otimizadas de se construir um Timer, as quais aproveitam melhor os códigos, usam menos funções intermediárias, etc. Por enquanto, esse é o modo como consegui fazer considerando o que estudei até aqui</p>
+
+## Demonstração
+
+<img src="images/demo.png" align="center">
+
+<br>
+<br>
+
+<img src="images/gif-demo.gif" align="center">
